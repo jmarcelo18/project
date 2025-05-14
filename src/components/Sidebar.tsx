@@ -6,7 +6,8 @@ import {
   PhoneCall, 
   ClipboardList, 
   ShieldCheck,
-  X
+  X,
+  Receipt
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -21,6 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     { name: 'Chamados Sinco', path: '/service-calls', icon: <PhoneCall size={20} /> },
     { name: 'Histórico de Visitas', path: '/visit-history', icon: <ClipboardList size={20} /> },
     { name: 'AVCB', path: '/avcb', icon: <ShieldCheck size={20} /> },
+    { name: 'Orçamentos', path: '/budgets', icon: <Receipt size={20} /> },
   ];
 
   return (

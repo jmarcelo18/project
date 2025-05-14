@@ -6,6 +6,7 @@ import Companies from '../pages/Companies';
 import ServiceCalls from '../pages/ServiceCalls';
 import VisitHistory from '../pages/VisitHistory';
 import AVCB from '../pages/AVCB';
+import Budgets from '../pages/Budgets';
 import Header from './Header';
 import { Menu } from 'lucide-react';
 
@@ -38,6 +39,7 @@ const Layout: React.FC = () => {
               <Route path="/service-calls" element={<ServiceCalls />} />
               <Route path="/visit-history" element={<VisitHistory />} />
               <Route path="/avcb" element={<AVCB />} />
+              <Route path="/budgets" element={<Budgets />} />
             </Routes>
           </div>
         </main>
