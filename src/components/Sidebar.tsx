@@ -35,17 +35,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       ></div>
 
       <div
-        className={`fixed inset-y-0 left-0 z-30 w-64 transition duration-300 transform bg-blue-700 lg:translate-x-0 lg:static lg:inset-0 ${
+        className={`fixed inset-y-0 left-0 z-30 w-64 transition duration-300 transform bg-secondary lg:translate-x-0 lg:static lg:inset-0 ${
           isOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'
         }`}
       >
-        <div className="flex items-center justify-between flex-shrink-0 px-4 py-4">
+        <div className="flex items-center justify-between flex-shrink-0 px-4 py-4 border-b border-gray-800">
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-semibold tracking-wider text-white">Alta Vista</span>
+            <span className="text-xl font-bold tracking-wider text-primary">Alta Vista</span>
           </div>
           <button
             onClick={toggleSidebar}
-            className="p-2 text-white rounded-md lg:hidden hover:text-white hover:bg-blue-600"
+            className="p-2 text-primary rounded-md lg:hidden hover:text-white hover:bg-primary/80 transition"
           >
             <X size={24} />
           </button>
@@ -56,14 +56,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
               key={item.path}
               to={item.path}
               className={({ isActive }) =>
-                `flex items-center px-4 py-3 text-sm font-medium rounded-md transition-colors duration-150 ${
+                `flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-150 gap-2 select-none shadow-none ${
                   isActive
-                    ? 'bg-blue-800 text-white'
-                    : 'text-blue-100 hover:bg-blue-600'
+                    ? 'bg-primary text-white shadow-card'
+                    : 'text-blue-100 hover:bg-primary/20 hover:text-white'
                 }`
               }
             >
-              <span className="mr-3">{item.icon}</span>
+              <span className="mr-2">{item.icon}</span>
               <span>{item.name}</span>
             </NavLink>
           ))}

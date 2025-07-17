@@ -53,7 +53,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({
             required
             value={formData.company}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+            className="mt-1 block w-full rounded-xl border-gray-200 shadow-card focus:border-primary focus:ring-primary sm:text-sm transition"
           />
         </div>
 
@@ -68,7 +68,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({
             required
             value={formData.area}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+            className="mt-1 block w-full rounded-xl border-gray-200 shadow-card focus:border-primary focus:ring-primary sm:text-sm transition"
           />
         </div>
 
@@ -82,7 +82,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({
             required
             value={formData.periodicity}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+            className="mt-1 block w-full rounded-xl border-gray-200 shadow-card focus:border-primary focus:ring-primary sm:text-sm transition"
           >
             <option value="">Selecione</option>
             <option value="Mensal">Mensal</option>
@@ -103,7 +103,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({
             required
             value={formData.technicalResponsible}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+            className="mt-1 block w-full rounded-xl border-gray-200 shadow-card focus:border-primary focus:ring-primary sm:text-sm transition"
           />
         </div>
 
@@ -118,7 +118,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({
             required
             value={formData.lastMaintenance}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+            className="mt-1 block w-full rounded-xl border-gray-200 shadow-card focus:border-primary focus:ring-primary sm:text-sm transition"
           />
         </div>
 
@@ -133,7 +133,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({
             required
             value={formData.nextMaintenance}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+            className="mt-1 block w-full rounded-xl border-gray-200 shadow-card focus:border-primary focus:ring-primary sm:text-sm transition"
           />
         </div>
 
@@ -147,7 +147,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({
             rows={3}
             value={formData.observation}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+            className="mt-1 block w-full rounded-xl border-gray-200 shadow-card focus:border-primary focus:ring-primary sm:text-sm transition"
           />
         </div>
       </div>
@@ -156,13 +156,13 @@ const CompanyForm: React.FC<CompanyFormProps> = ({
         <button
           type="button"
           onClick={onCancel}
-          className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-xl shadow-card hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition"
         >
           Cancelar
         </button>
         <button
           type="submit"
-          className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-xl shadow-card hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition"
         >
           Salvar
         </button>

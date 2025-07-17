@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { Building2 } from 'lucide-react';
+// import { Building2 } from 'lucide-react'; // Removido pois não é mais usado
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('admin');
@@ -25,13 +25,16 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex bg-gradient-to-tr from-primary/80 via-accent/40 to-background">
       {/* Lado esquerdo - Imagem/Background */}
-      <div className="hidden lg:flex lg:w-1/2 bg-blue-600 items-center justify-center">
+      <div className="hidden lg:flex lg:w-1/2 items-center justify-center">
         <div className="max-w-md text-center px-12">
-          <Building2 className="h-24 w-24 text-white mx-auto mb-8" />
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Sistema Alta Vista
+          {/* Logo fictícia grande */}
+          <div className="mx-auto mb-8 w-28 h-28 rounded-full bg-gradient-to-tr from-primary via-accent to-primary/80 flex items-center justify-center shadow-card">
+            <span className="text-white text-3xl font-extrabold tracking-tight drop-shadow-lg">RA</span>
+          </div>
+          <h2 className="text-4xl font-extrabold text-white mb-4 tracking-tight">
+            Reserva Alta Vista
           </h2>
           <p className="text-blue-100 text-lg">
             Gerencie seus chamados e serviços de forma eficiente
@@ -40,21 +43,23 @@ const Login: React.FC = () => {
       </div>
 
       {/* Lado direito - Formulário */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="w-full lg:w-1/2 flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-background/60">
         <div className="max-w-md w-full space-y-8">
-          {/* Logo para mobile */}
-          <div className="lg:hidden text-center">
-            <Building2 className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-gray-900">
-              Sistema Alta Vista
+          {/* Logo fictícia para mobile */}
+          <div className="lg:hidden text-center mb-6">
+            <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-gradient-to-tr from-primary via-accent to-primary/80 flex items-center justify-center shadow-card">
+              <span className="text-white text-2xl font-extrabold tracking-tight drop-shadow-lg">RA</span>
+            </div>
+            <h2 className="text-2xl font-extrabold text-secondary tracking-tight">
+              Reserva Alta Vista
             </h2>
           </div>
 
-          <div className="bg-white p-8 rounded-2xl shadow-xl">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="bg-white/70 backdrop-blur-lg p-10 rounded-2xl shadow-2xl border border-gray-100">
+            <h2 className="text-2xl font-bold text-secondary mb-6">
               Bem-vindo de volta
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-500 mb-8">
               Faça login para acessar o sistema
             </p>
 
@@ -75,7 +80,7 @@ const Login: React.FC = () => {
                     name="username"
                     type="text"
                     required
-                    className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                    className="appearance-none block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-card placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-150 ease-in-out"
                     placeholder="Digite seu usuário"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -91,7 +96,7 @@ const Login: React.FC = () => {
                     name="password"
                     type="password"
                     required
-                    className="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
+                    className="appearance-none block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-card placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-150 ease-in-out"
                     placeholder="Digite sua senha"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -102,7 +107,7 @@ const Login: React.FC = () => {
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out"
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-card text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out"
                 >
                   Entrar
                 </button>

@@ -9,6 +9,7 @@ import {
   Building2,
   CalendarClock
 } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 
 const Dashboard: React.FC = () => {
   const { serviceCalls, companies, avcbServices } = useAppContext();
@@ -24,6 +25,18 @@ const Dashboard: React.FC = () => {
 
   // Calculate services near expiration (less than 15 days)
   const nearExpirationServices = avcbServices.filter(service => service.daysToExpire <= 15).length;
+
+  // Dados para os gráficos
+  const callsData = [
+    { name: 'Resolvido', value: resolvedCalls },
+    { name: 'Pendente', value: pendingCalls },
+    { name: 'Análise', value: analyzingCalls },
+  ];
+  const contractsData = [
+    { name: 'Ativos', value: activeContracts },
+    { name: 'Expirados', value: 0 }, // Exemplo fictício
+  ];
+  const COLORS = ['#2563eb', '#facc15', '#f97316', '#0f172a'];
 
   return (
     <div className="space-y-6">
@@ -48,6 +61,51 @@ const Dashboard: React.FC = () => {
           icon={<Clock className="h-6 w-6 text-white" />}
           color="bg-yellow-500"
         />
+      </div>
+
+      {/* Gráficos Dashboard */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        {/* Gráfico de Barras - Status dos Chamados */}
+        <div className="bg-white rounded-xl shadow-card p-6 flex flex-col items-center">
+          <h3 className="text-lg font-semibold text-secondary mb-4">Status dos Chamados</h3>
+          <ResponsiveContainer width="100%" height={220}>
+            <BarChart data={callsData}>
+              <XAxis dataKey="name" tick={{ fill: '#334155', fontSize: 14 }} />
+              <YAxis tick={{ fill: '#334155', fontSize: 14 }} allowDecimals={false} />
+              <Tooltip />
+              <Bar dataKey="value" radius={[8, 8, 0, 0]} fill="#2563eb">
+                {callsData.map((_, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        {/* Gráfico de Pizza - Contratos Ativos */}
+        <div className="bg-white rounded-xl shadow-card p-6 flex flex-col items-center">
+          <h3 className="text-lg font-semibold text-secondary mb-4">Contratos</h3>
+          <ResponsiveContainer width="100%" height={220}>
+            <PieChart>
+              <Pie
+                data={contractsData}
+                dataKey="value"
+                nameKey="name"
+                cx="50%"
+                cy="50%"
+                outerRadius={70}
+                innerRadius={40}
+                fill="#2563eb"
+                label
+              >
+                {contractsData.map((_, index) => (
+                  <Cell key={`cell-contract-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Legend />
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
