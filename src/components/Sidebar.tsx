@@ -21,7 +21,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     { name: 'Empresas Especializadas', path: '/companies', icon: <Building2 size={20} /> },
     { name: 'Chamados Sinco', path: '/service-calls', icon: <PhoneCall size={20} /> },
     { name: 'Histórico de Visitas', path: '/visit-history', icon: <ClipboardList size={20} /> },
-    { name: 'AVCB', path: '/avcb', icon: <ShieldCheck size={20} /> },
+    { name: 'AVCB/SERVIÇOS', path: '/avcb', icon: <ShieldCheck size={20} /> },
     { name: 'Orçamentos', path: '/budgets', icon: <Receipt size={20} /> },
   ];
 
