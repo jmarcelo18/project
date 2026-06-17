@@ -17,12 +17,12 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const navItems = [
-    { name: 'Dashboard', path: '/', icon: <LayoutDashboard size={20} /> },
-    { name: 'Empresas Especializadas', path: '/companies', icon: <Building2 size={20} /> },
-    { name: 'Chamados Sinco', path: '/service-calls', icon: <PhoneCall size={20} /> },
-    { name: 'Histórico de Visitas', path: '/visit-history', icon: <ClipboardList size={20} /> },
+    { name: 'DASHBOARD', path: '/', icon: <LayoutDashboard size={20} /> },
+    { name: 'CONTRATOS', path: '/companies', icon: <Building2 size={20} /> },
+    { name: 'CHAMADOS SINCO', path: '/service-calls', icon: <PhoneCall size={20} /> },
+    { name: 'HISTÓRICO DE VISITAS', path: '/visit-history', icon: <ClipboardList size={20} /> },
     { name: 'AVCB/SERVIÇOS', path: '/avcb', icon: <ShieldCheck size={20} /> },
-    { name: 'Orçamentos', path: '/budgets', icon: <Receipt size={20} /> },
+    { name: 'ORÇAMENTOS', path: '/budgets', icon: <Receipt size={20} /> },
   ];
 
   return (
